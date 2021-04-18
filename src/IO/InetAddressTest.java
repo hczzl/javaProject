@@ -1,3 +1,5 @@
+package IO;
+
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -9,10 +11,13 @@ import java.net.UnknownHostException;
 public class InetAddressTest {
     public static void main(String[] args) {
         try {
-            // 获取本机的主机信息
+            // 1、根据getLocalhost()方法获取InetAddress对象
             InetAddress inetAddress =InetAddress.getLocalHost();
             System.out.println("主机名："+inetAddress.getHostName());
             System.out.println("主机地址："+inetAddress.getHostAddress());
+            // 2、根据计算机名获取InetAddress对象
+            InetAddress address = InetAddress.getByName("MS-QENFPQRDNSFR");
+            System.out.println("计算机名—"+address.getHostName()+",计算机地址-"+address.getHostAddress());
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
