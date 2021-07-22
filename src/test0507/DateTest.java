@@ -22,6 +22,7 @@ public class DateTest {
         try {
             Date temp = sdf.parse(stringDate);
             msg = format.format(temp);
+
             System.out.println("msg = " + msg);
         } catch (ParseException e) {
             e.printStackTrace();
